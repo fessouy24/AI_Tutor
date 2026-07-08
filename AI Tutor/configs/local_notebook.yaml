@@ -1,0 +1,175 @@
+environment: local-notebook-ednet-only
+seed: 42
+paths:
+  data_root: C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)
+  dataset_path: C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets
+    (Organized)\EdNet_Contents\contents\questions.csv
+  dataset_path_candidates: &id001
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)\EdNet_Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)\EdNet_Contents\EdNet-Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Dataset (Organized)\EdNet_Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Datasets
+    (Organized)\EdNet_Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Dataset
+    (Organized)\EdNet_Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)\EdNet_Contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)\EdNet_Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)\EdNet_Contents\EdNet-Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Dataset (Organized)\EdNet_Contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Datasets
+    (Organized)\EdNet_Contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Dataset
+    (Organized)\EdNet_Contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)\My_AI_Tutor_Datasets_RAW\EdNet-Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Dataset (Organized)\My_AI_Tutor_Datasets_RAW\EdNet-Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Datasets
+    (Organized)\My_AI_Tutor_Datasets_RAW\EdNet-Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Dataset
+    (Organized)\My_AI_Tutor_Datasets_RAW\EdNet-Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\My_AI_Tutor_Datasets\EdNet-Contents\contents\questions.csv
+  - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Data stuff\EdNet-Contents\contents\questions.csv
+  processed_dir: C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\AI Tutor\outputs\processed
+  checkpoints_dir: C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\AI Tutor\checkpoints
+  outputs_dir: C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\AI Tutor\outputs
+  logs_dir: C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\AI Tutor\logs
+  rag_docs_dir: C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets
+    (Organized)\RAG_Datasets
+  rag_index_dir: C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\AI Tutor\outputs\rag_index_datasets
+  retrieval_log: C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\AI Tutor\outputs\retrieval_logs.jsonl
+  tutor_log: C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\AI Tutor\outputs\tutor_logs.jsonl
+  explanations_dir: C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\AI
+    Tutor\outputs\explanations
+data:
+  dataset_name: ednet_kt1_kt2_kt3_kt4
+  use_multi_source: true
+  kt_sources:
+  - name: ednet_kt3
+    type: ednet_folder
+    path_candidates:
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)\EdNet_KT3
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Dataset (Organized)\EdNet_KT3
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Datasets
+      (Organized)\EdNet_KT3
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Dataset
+      (Organized)\EdNet_KT3
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\My_AI_Tutor_Datasets\KT3
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Data stuff\EdNet-KT3
+    correct_answer_path_candidates: *id001
+    enabled: true
+  - name: ednet_kt4
+    type: ednet_folder
+    path_candidates:
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)\EdNet_KT4
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Dataset (Organized)\EdNet_KT4
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Datasets
+      (Organized)\EdNet_KT4
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Dataset
+      (Organized)\EdNet_KT4
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\My_AI_Tutor_Datasets\KT4
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Data stuff\EdNet-KT4
+    correct_answer_path_candidates: *id001
+    enabled: true
+    required: false
+  - name: ednet_kt2_uploaded
+    type: ednet_folder
+    path_candidates:
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)\EdNet_KT2
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Dataset (Organized)\EdNet_KT2
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Datasets
+      (Organized)\EdNet_KT2
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Dataset
+      (Organized)\EdNet_KT2
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\My_AI_Tutor_Datasets\KT2
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Data stuff\EdNet-KT2
+    correct_answer_path_candidates: *id001
+    enabled: true
+  - name: ednet_kt1
+    type: ednet_folder
+    path_candidates:
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)\EdNet_KT1\KT1
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Dataset (Organized)\EdNet_KT1\KT1
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Datasets
+      (Organized)\EdNet_KT1\KT1
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Dataset
+      (Organized)\EdNet_KT1\KT1
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Datasets (Organized)\EdNet_KT1
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Dataset (Organized)\EdNet_KT1
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Datasets
+      (Organized)\EdNet_KT1
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\downloaded_datasets\Dataset
+      (Organized)\EdNet_KT1
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\My_AI_Tutor_Datasets\KT1
+    - C:\Users\Youssef Haitham\Desktop\My_Bag\Graduation Project\Data stuff\EdNet-KT1
+    correct_answer_path_candidates: *id001
+    enabled: true
+    required: true
+  max_rows: null
+  column_overrides: {}
+  min_seq_len: 3
+  max_seq_len: 200
+  stride: 200
+  require_all_kt_sources: true
+  ednet_progress_every_files: 1000
+  processed_cache_path: outputs/processed/kt_processed_ednet_only.pt
+  cache_sources: true
+  cache_processed: true
+  rebuild_cache: false
+  split:
+    train: 0.8
+    val: 0.1
+    test: 0.1
+model:
+  type: akt
+  d_model: 128
+  n_heads: 8
+  n_layers: 3
+  dropout: 0.2
+  ff_multiplier: 4
+training:
+  epochs: 23
+  batch_size: 96
+  lr: 0.001
+  weight_decay: 0.01
+  patience: 5
+  num_workers: 0
+  mixed_precision: true
+  grad_clip: 1.0
+  scheduler: cosine
+  save_every_epoch: true
+  pin_memory: true
+rag:
+  backend: turbovec
+  collection_name: ai_tutor_rag_datasets_local_v2
+  embedding_backend: auto
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  turbovec_bits: 3
+  hashing_features: 1024
+  chunk_size: 900
+  chunk_overlap: 150
+  top_k: 4
+  rebuild_index: false
+  max_file_mb: 50
+  max_files: 120
+  max_chunks: 25000
+  max_chars_per_file: 500000
+tutor:
+  mode: turboquant
+  openai_model: gpt-4.1-mini
+  local_model: Qwen/Qwen2.5-0.5B-Instruct
+  turboquant_model: Qwen/Qwen2.5-0.5B-Instruct
+  turboquant_base_url: null
+  turboquant_bits: 4
+  max_new_tokens: 220
+  temperature: 0.4
+  quantization: turboquant
+  allow_direct_answer: false
+  hint_mode: true
+evaluation:
+  rag_top_k: 4
+  notes: Local EdNet-only AKT + RAG + Socratic tutor baseline using Datasets (Organized)
+    when available.
+benchmark:
+  akt_batches: 20
+  onnx_batches: 50
+  run_local_llm: false
+  run_api_llm: false

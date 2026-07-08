@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets and local configuration
+.env
+.env.*
+*.pem
+*.key
+
+# Local datasets and generated artifacts
+Datasets (Organized)/
+/outputs/
+Sources (Temp)/
+Test Thesis (Temp)/
+Powerpoint Examples GP/
+AI Tutor/checkpoints/*
+AI Tutor/logs/*
+AI Tutor/outputs/*
+frontend/artifacts/*
+!AI Tutor/checkpoints/.gitkeep
+!AI Tutor/logs/.gitkeep
+!AI Tutor/outputs/.gitkeep
+
+# Local notebook with dataset download credentials/history
+AI Tutor/notebooks/data_handling.ipynb
+
+# Presentation and thesis artifacts kept outside the public repo
+*.zip
+*.pptx
+*.docx
+*.pdf
+*.png
+*.jpg
+*.jpeg
+artifact-build-manifest.json
+evaluation_report.txt
+/AI_Tutor_Local.ipynb
+/build_discussion_docx.py

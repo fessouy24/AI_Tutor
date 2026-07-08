@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+checkpoints/*
+outputs/*
+logs/*
+!checkpoints/.gitkeep
+!outputs/.gitkeep
+!logs/.gitkeep
+

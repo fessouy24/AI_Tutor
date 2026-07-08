@@ -1,0 +1,35 @@
+torch
+pandas
+pyarrow
+numpy
+scikit-learn
+pyyaml
+sentence-transformers
+chromadb
+openai
+transformers
+bitsandbytes
+turboquant-kv
+turbovec
+triton; platform_system != "Windows"
+triton-windows; platform_system == "Windows"
+onnx
+onnxruntime
+shap
+pypdf
+python-docx
+matplotlib
+python-pptx
+
+# Dataset download link
+# Ednet: [riiid/ednet](https://github.com/riiid/ednet)
+# XES3G5M: [ai4ed/XES3G5M](https://github.com/ai4ed/XES3G5M)
+# OpenStax: https://files.znu.edu.ua/files/Bibliobooks/Inshi83/0062670.pdf
+#
+# After downloading datasets, edit dataset paths in:
+# - AI Tutor/configs/local_notebook.yaml
+# - AI Tutor/configs/local.yaml
+# - AI_Tutor_Local.ipynb, in the "0. Local user settings" cell
+# - AI Tutor/notebooks/AI_Tutor_Local.ipynb, in the "0. Local user settings" cell
+
+Main Notebook for running = r"AI Tutor\notebooks\AI_Tutor_Local.ipynb"

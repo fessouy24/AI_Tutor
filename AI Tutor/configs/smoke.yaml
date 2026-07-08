@@ -1,0 +1,93 @@
+environment: smoke
+seed: 42
+paths:
+  data_root: ../Datasets (Organized)
+  dataset_path: ../Datasets (Organized)/EdNet_Contents/contents/questions.csv
+  processed_dir: outputs/smoke_ednet/processed
+  checkpoints_dir: outputs/smoke_ednet/checkpoints
+  outputs_dir: outputs/smoke_ednet/outputs
+  logs_dir: outputs/smoke_ednet/logs
+  rag_docs_dir: ../Datasets (Organized)/RAG_Datasets
+  rag_index_dir: outputs/smoke_ednet/rag_index_datasets
+  retrieval_log: outputs/smoke_ednet/retrieval_logs.jsonl
+  tutor_log: outputs/smoke_ednet/tutor_logs.jsonl
+  explanations_dir: outputs/smoke_ednet/explanations
+data:
+  dataset_name: ednet_smoke
+  use_multi_source: true
+  kt_sources:
+  - name: ednet_kt1_smoke
+    type: ednet_folder
+    path_candidates:
+    - ../Datasets (Organized)/EdNet_KT1/KT1
+    - ../Datasets (Organized)/EdNet_KT1
+    correct_answer_path_candidates:
+    - ../Datasets (Organized)/EdNet_Contents/contents/questions.csv
+    - ../Datasets (Organized)/EdNet_Contents/questions.csv
+    enabled: true
+    required: true
+    max_files: 250
+  max_rows: null
+  column_overrides: {}
+  min_seq_len: 3
+  max_seq_len: 100
+  stride: 100
+  require_all_kt_sources: true
+  processed_cache_path: outputs/smoke_ednet/processed/kt_processed_ednet_smoke.pt
+  cache_sources: true
+  cache_processed: true
+  rebuild_cache: false
+  split:
+    train: 0.8
+    val: 0.1
+    test: 0.1
+model:
+  type: akt
+  d_model: 64
+  n_heads: 4
+  n_layers: 1
+  dropout: 0.2
+  ff_multiplier: 4
+training:
+  epochs: 1
+  batch_size: 16
+  lr: 0.001
+  weight_decay: 0.01
+  patience: 2
+  num_workers: 0
+  mixed_precision: false
+  grad_clip: 1.0
+  scheduler: cosine
+  save_every_epoch: true
+  pin_memory: false
+rag:
+  backend: turbovec
+  collection_name: ai_tutor_rag_datasets_smoke
+  embedding_backend: hash
+  turbovec_bits: 3
+  hashing_features: 256
+  chunk_size: 500
+  chunk_overlap: 80
+  top_k: 3
+  rebuild_index: false
+  max_file_mb: 15
+  max_files: 5
+  max_chunks: 1000
+  max_chars_per_file: 50000
+tutor:
+  mode: template
+  openai_model: gpt-4.1-mini
+  local_model: Qwen/Qwen2.5-0.5B-Instruct
+  max_new_tokens: 120
+  temperature: 0.4
+  quantization: auto
+  allow_direct_answer: false
+  hint_mode: true
+evaluation:
+  rag_top_k: 3
+  notes: EdNet-only smoke test.
+benchmark:
+  akt_batches: 2
+  onnx_batches: 2
+  run_local_llm: false
+  run_api_llm: false

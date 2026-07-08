@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Tutor Research Console</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.18.0/dist/ort.min.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="mark">AT</div>
+          <div>
+            <h1>AI Tutor</h1>
+            <p>AKT + RAG + Twin</p>
+          </div>
+        </div>
+
+        <section class="panel compact">
+          <h2>Model</h2>
+          <label class="field">
+            <span>Runtime</span>
+            <select id="modelSelect">
+              <option value="rag_conditioned">RAG-conditioned AKT</option>
+              <option value="baseline">Baseline AKT</option>
+            </select>
+          </label>
+          <div class="metric-row">
+            <div>
+              <span>AUC</span>
+              <strong id="aucMetric">--</strong>
+            </div>
+            <div>
+              <span>Acc</span>
+              <strong id="accMetric">--</strong>
+            </div>
+          </div>
+          <p id="modelStatus" class="status">Loading artifacts...</p>
+        </section>
+
+        <section class="panel compact">
+          <h2>Student Twin</h2>
+          <label class="field">
+            <span>Pace</span>
+            <select id="paceSelect">
+              <option>slow</option>
+              <option selected>average</option>
+              <option>fast</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Frustration</span>
+            <input id="frustrationInput" type="range" min="0" max="1" step="0.05" value="0.25" />
+          </label>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <h2>Tutoring Session</h2>
+            <p id="artifactPath">Waiting for exported ONNX artifacts</p>
+          </div>
+          <div class="actions">
+            <button id="resetBtn" type="button" title="Reset session">&#8634;</button>
+            <button id="runBtn" type="button">Ask Tutor</button>
+          </div>
+        </header>
+
+        <section class="main-grid">
+          <div class="conversation">
+            <div id="chatLog" class="chat-log"></div>
+            <form id="queryForm" class="query-bar">
+              <input id="studentQuery" type="text" value="I get confused solving equations with variables on both sides" />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+
+          <div class="inspector">
+            <section class="panel">
+              <h2>Mastery State</h2>
+              <div id="masteryList" class="mastery-list"></div>
+            </section>
+
+            <section class="panel">
+              <h2>Grounding</h2>
+              <div id="groundingList" class="evidence-list"></div>
+              <div id="hallucinationStatus" class="hallucination-status">No retrieval check yet.</div>
+            </section>
+
+            <section class="panel">
+              <h2>Prompt Payload</h2>
+              <pre id="promptPreview">{}</pre>
+            </section>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
